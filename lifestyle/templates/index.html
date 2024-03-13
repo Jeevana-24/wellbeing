@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lifestyle Website</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<center>
+<img alt="Lifestyle Image" src="https://img.freepik.com/free-vector/illustration-passion_53876-17884.jpg" width="1000"/>
+
+<form action="{% url 'results' %}" method="POST" id="systemForm" style="text-align: center;"> 
+  {% csrf_token %}
+  <label for="name">Enter your query:</label>
+    <input type="text" id="name" name="name">
+    <input type="submit" value="Submit">
+  <br></br>
+  <div style="display: inline-block; text-align: left; margin-top: 10px;">
+    <label style="display: block; margin-bottom: 10px;">
+        <input type="radio" id='systemForm' name="req_method" value="PyLucene">
+        PyLucene
+    </label>
+    <label style="display: block;">
+        <input type="radio" id="systemForm" name="req_method" value="BERT">
+        BERT
+    </label>
+</div>
+</form>
+
+
+</center>
+</body>

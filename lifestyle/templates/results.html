@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+<html>
+  <head>
+    <title>Fitness Tweets</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Top 10 {{req_method}} Tweets</h1>
+      {% if d %} 
+      {% for i in d %} 
+        <p>{{i}}</p>
+      {% endfor %} 
+      {% endif %} 
+    </div>
+    <style>
+       
+       body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      /* .container {
+        max-width: 800px;
+        margin: 40px auto 0;
+        padding: 20px;
+      } */
+      h1 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      p {
+        font-size: 18px;
+        margin: 20px 0;
+      }
+      a {
+        color: #0077cc;
+        text-decoration: none;
+      }
+      .container {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+  }
+  
+  button.accordion {
+    width: 100%;
+    background-color: whitesmoke;
+    border: none;
+    outline: none;
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 18px;
+    color: #444;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+  }
+  
+  button.accordion:after {
+  content: '\f055';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 14px;
+  float: right;
+}
+
+button.accordion.is-open:after {
+  content: '\f056';
+}
+  button.accordion:hover, button.accordion.is-open {
+    background-color: #ddd;
+  }
+  
+  .accordion-content {
+    background-color: white;
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+  }
+  
+  </style>
+
+<script>
+  var accordions = document.getElementsByClassName("accordion");
+
+  for (var i = 0; i < accordions.length; i++) {
+    accordions[i].onclick = function() {
+      this.classList.toggle('is-open');
+
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight) {
+        // accordion is currently open, so close it
+        content.style.maxHeight = null;
+      } else {
+        // accordion is currently closed, so open it
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    }
+  }
+</script>
+
+  </body>
+</html>
+
+
